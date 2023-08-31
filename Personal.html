@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Info with Animation</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+  }
+  .container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    margin-top: 0;
+  }
+  .animated-text {
+    font-size: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .animation {
+    animation: fadeInUp 1s ease forwards;
+  }
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Personal Information</h1>
+  <p class="animated-text">Name: Shahriar Jaman</p>
+  <p class="animated-text">Age: 18</p>
+  <p class="animated-text">Occupation: Web Developer</p>
+</div>
+<script>
+  // Add animation class to each animated-text element
+  const animatedTextElements = document.querySelectorAll('.animated-text');
+  animatedTextElements.forEach(element => {
+    element.classList.add('animation');
+  });
+</script>
+</body>
+</html>
